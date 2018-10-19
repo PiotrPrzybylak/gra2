@@ -116,17 +116,17 @@ var mousePressed = function() {
     }
         //dla ekranu wyboru planszy
     else if (game_state === 0) {
-            if (btn1.isMouseInside()) {
+            if (btn1.isMouseInside(mouseX, mouseY)) {
                 NUM_COLS = 5;
                 NUM_ROWS = 4;
                 game_state = 1;
             }
-            else if (btn2.isMouseInside()) {
+            else if (btn2.isMouseInside(mouseX, mouseY)) {
                 NUM_COLS = 4;
                 NUM_ROWS = 4;
                 game_state = 1;
             }
-            else if (btn3.isMouseInside()) {
+            else if (btn3.isMouseInside(mouseX, mouseY)) {
                 NUM_COLS = 2;
                 NUM_ROWS = 2;
                 game_state = 1;
@@ -250,17 +250,17 @@ var mousePressed = function() {
 
         //dla ekranu wyboru planszy
 
-            if (btn1.isMouseInside()) {
+            if (btn1.isMouseInside(mouseX, mouseY)) {
                 NUM_COLS = 5;
                 NUM_ROWS = 4;
                 game_state = 1;
             }
-            else if (btn2.isMouseInside()) {
+            else if (btn2.isMouseInside(mouseX, mouseY)) {
                 NUM_COLS = 4;
                 NUM_ROWS = 4;
                 game_state = 1;
             }
-            else if (btn3.isMouseInside()) {
+            else if (btn3.isMouseInside(mouseX, mouseY)) {
                 NUM_COLS = 2;
                 NUM_ROWS = 2;
                 game_state = 1;
@@ -360,7 +360,7 @@ var draw = function() {
            btn2.draw();
            btn3.draw();
 
-           if(mousePressed(this.isMouseInside())) {
+           if(mouseIsPressed && this.isMouseInside(mouseX, mouseY)) {
                game_state = 1;
            }
 
